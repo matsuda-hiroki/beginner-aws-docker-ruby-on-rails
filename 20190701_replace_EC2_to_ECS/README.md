@@ -43,7 +43,8 @@ jenkins‚ÅƒWƒ‡ƒu‚ðG‚Á‚½‚±‚Æ‚ª‚ ‚é’ö“xB
 
 ## ‚Ü‚¸‚ÍƒTƒ“ƒvƒ‹‚ð“®‚©‚¹‚é‚æ‚¤‚É
 ƒnƒ“ƒYƒIƒ“Ž‘—¿‚È‚Ç‚ðÏ‹É“I‚ÉŠˆ—p‚µAÅ‰‚É“®ì‚·‚é‚à‚Ìì‚Á‚Ä‚©‚ç‚ÌC³AŠg’£‚ð‚¨Š©‚ß‚µ‚Ü‚·B  
-AWS Well-Architected‚ª“K—p‚³‚ê‚Ä‚¨‚èAŠî‘b“I‚È•”•ª(VPCAƒTƒuƒlƒbƒgAƒZƒLƒ…ƒŠƒeƒBƒOƒ‹[ƒv)‚È‚Ç‚ð’S•Û‚µ‚Ä‚­‚ê‚é‚Ì‚ÅA‚Í‚Ü‚è‚Ç‚±‚ë‚ªŒ¸‚è‚Ü‚·B
+AWS Well-Architected‚ÌŽv‘z‚ª”½‰f‚³‚ê‚Ä‚¨‚èAŠî‘b“I‚È•”•ª(VPCAƒTƒuƒlƒbƒgAƒZƒLƒ…ƒŠƒeƒBƒOƒ‹[ƒv)‚È‚Ç‚ð’S•Û‚µ‚Ä‚­‚ê‚Ü‚·B  
+
 
 ## Ž¿–â‚Å‚«‚éŠÂ‹«‚ðì‚ë‚¤
 \’zŒoŒ±‚Ì‚ ‚é—LŽ¯ŽÒA‚Ü‚½‚ÍAWS‚³‚ñ‚ÌSA‚É‹¦—ÍˆË—Š‚µ‚ÄAŽ¿–â‚Å‚«‚éŠÂ‹«‚ð\’z‚µ‚Ü‚µ‚å‚¤B  
@@ -52,10 +53,10 @@ AWS Well-Architected‚ª“K—p‚³‚ê‚Ä‚¨‚èAŠî‘b“I‚È•”•ª(VPCAƒTƒuƒlƒbƒgAƒZƒLƒ…ƒŠƒeƒB
 ’ˆÓ“_‚Æ‚µ‚ÄA•¡”l‚ÌˆÓŒ©‚ðˆê“x‚É‚Ü‚Æ‚ß‚Ä•·‚­‚ÆAŽó‚¯Žæ‚é‘¤‚Ìˆ—‚ª’Ç‚¢‚Â‚©‚¸A¬—‚·‚é‰Â”\«‚ª‚ ‚è‚Ü‚·B
 
 ## H”‚ÌŒ©Ï‚à‚è
-³Šm‚ÈŒ©Ï‚à‚è‚ª‚Ð‚Â‚æ‚¤‚Èê‡‚ÍA•ª‚©‚ç‚È‚¢‚±‚Æ‚ðo—ˆ‚é‚¾‚¯­‚È‚­‚µ‚Ü‚µ‚å‚¤B
+³Šm‚ÈŒ©Ï‚à‚è‚ª‚Ð‚Â‚æ‚¤‚Èê‡‚ÍA•ª‚©‚ç‚È‚¢‚±‚Æ‚ðo—ˆ‚é‚¾‚¯­‚È‚­‚µ‚Ü‚µ‚å‚¤B  
 •ª‚©‚ç‚È‚¢‚±‚Æ‚ª‘½‚¢‚ÆŒ´ˆö“Á’è‚ÉŽžŠÔ‚ª‚©‚è‚Ü‚·B  
-•ª‚©‚ç‚È‚¢‚à‚Ì‚Ì”‚¾‚¯A“Á’è‚·‚éH”‚ª”{‚Å‚Í‚È‚­æŽZ‚³‚ê‚é‚ÆŽv‚Á‚Ä‚­‚¾‚³‚¢B
-ƒGƒ‰[‚ª“¯Žž‚ª‘½”­“I‚É”­¶‚µ‚½ê‡‚É‚ÍA¸_“I‚É‚«‚Â‚­‚È‚è‚Ü‚·B  
+•ª‚©‚ç‚È‚¢‚à‚Ì‚Ì”‚¾‚¯A“Á’è‚·‚éH”‚ª”{‚Å‚Í‚È‚­æŽZ‚³‚ê‚é‚ÆŽv‚Á‚Ä‚­‚¾‚³‚¢B  
+ƒGƒ‰[‚ª“¯Žž‚ª‘½”­“I‚É”­¶‚µ‚½ê‡‚É‚ÍA¸_“I‚É‚«‚Â‚­‚È‚è‚Ü‚·B    
 
 ---
 
@@ -81,7 +82,7 @@ https://qiita.com/kyuaz/items/3da93bd05b1342212577
 
 ## VPC
 VPC’†‚Å•¡”ƒTƒuƒlƒbƒg‚ð\’z‚·‚é‚Ì‚ÅA‘å‚«‚ß‚É‚Æ‚è‚Ü‚µ‚å‚¤B  
-VPC‚ÌCIDR‚ð/24‚ÅŠm•Û‚·‚é‚ÆIP‚»‚Ì‚à‚Ì‚ª•s‘«‚·‚é‚©A•ª‚©‚è‚É‚­‚¢IP‘Ñ‚É‚È‚è‚Ü‚·B
+VPC‚ÌIP”ÍˆÍ‚ð`/24`‚ÅŠm•Û‚·‚é‚ÆIP•s‘«‚É‚È‚é‚©A•ª’f‚³‚ê‚·‚¬‚Ä•ª‚©‚è‚É‚­‚¢IP‘Ñ‚É‚È‚è‚Ü‚·B
 
 ### ƒTƒuƒlƒbƒg
 “à•”ƒZƒOƒƒ“ƒg‚ÆŠO•”ƒZƒOƒƒ“ƒg‚ð•ªŠ„‚µ‚Ü‚µ‚å‚¤B
@@ -120,20 +121,9 @@ Fargate‚Í‹N“®ƒRƒ“ƒeƒi‚Ö‚ÌSSHƒƒOƒCƒ“‚È‚Ç‚Í‚Å‚«‚È‚¢‚Å‚·B
 
 # ƒRƒ“ƒeƒi/Docker•Ò
 
-## apline image
-ƒƒOƒCƒ“ƒVƒFƒ‹ bash‚Å‚Í‚È‚­ashB
-```
-# ƒƒOƒCƒ“ƒVƒFƒ‹Žw’è‚Ü‚¿‚ª‚¦‚ÅƒGƒ‰[‚Æ‚È‚é
-docker run --rm -it test-image bash
-# ˆÈ‰º‚È‚çOK
-docker run --rm -it test-image ash
-docker run --rm -it test-image sh
-
-```
 ## ŒöŽ®Docker image‚ÌŽõ–½
-`docker build`Žž‚É•K—v‚Èƒ\ƒtƒgƒEƒGƒA‚ÌƒCƒ“ƒXƒg[ƒ‹ŽžAŒÃ‚¢ubuntuƒCƒ[ƒW‚ðŽg‚Á‚Ä‚¢‚é‚ÆAapt-get‚ÅƒGƒ‰[‚ªo‚éŽ–—á‚ª‚ ‚è‚Ü‚µ‚½B
-Œ´ˆö‚ÍŒÃ‚¢ƒo[ƒWƒ‡ƒ“‚Ìî•ñ‚ªBƒ~ƒ‰[ƒTƒCƒg‚©‚ç‚Ìíœ‚³‚ê‚½‚½‚ßB  
-https://gihyo.jp/admin/clip/01/linux_dt/201903/25    
+`docker build`Žž‚É•K—v‚Èƒ\ƒtƒgƒEƒGƒA‚ÌƒCƒ“ƒXƒg[ƒ‹ŽžAŒÃ‚¢ubuntuƒCƒ[ƒW‚ðŽg‚Á‚Ä‚¢‚é‚ÆAapt-get‚ÅƒGƒ‰[‚ªo‚éŽ–—á‚ª‚ ‚è‚Ü‚µ‚½B  
+Œ´ˆö‚ÍA[ŒÃ‚¢ƒo[ƒWƒ‡ƒ“‚Ìî•ñ‚ªBƒ~ƒ‰[ƒTƒCƒg‚©‚ç‚Ìíœ‚³‚ê‚½‚½‚ß](https://gihyo.jp/admin/clip/01/linux_dt/201903/25)  
 ‘Î‰ž‚Æ‚µ‚Ä‚ÍAimage‚Ìƒo[ƒWƒ‡ƒ“‚ðã‚°‚é‚±‚Æ‚Å‘Î‰ž‚µ‚Ü‚µ‚½B  
 —˜—p‚µ‚Ä‚¢‚éOS‚ÌƒTƒ|[ƒgŠúŒÀ‚ª‚¢‚Â‚©ˆÓŽ¯‚µ‚Ä‚¨‚­‚Æ‚æ‚¢‚Å‚·B  
 ƒTƒ|[ƒgŠúŒÀ‚ªØ‚ê‚Ä‚¢‚é‚à‚Ì‚ÍA–¾“ú‚É‚Å‚àDockerfile‚ªŽg‚¦‚È‚­‚È‚é‚à‚Ì‚Æ‚µ‚Ä‘‹}‚ÉXV‚ð‚¨Š©‚ß‚µ‚Ü‚·B  
@@ -144,21 +134,32 @@ docker-compose‚ðì‚Á‚Ä‚¨‚­‚ÆAŽŸ‚Ì—˜“_‚ª‚ ‚é‚Ì‚Åì¬‚ð‚¨Š©‚ß‚µ‚Ü‚·B
 E•s‹ï‡‚ª”­¶‚µ‚½ê‡‚ÌƒfƒoƒbƒOŠÂ‹«‚Ì—pˆÓB
 EECSƒ^ƒXƒN’è‹`‚Æ‹ß‚¢ŠÂ‹«‚Æ‚È‚èA–{”ÔŠÂ‹«ì¬‚ÉƒXƒ€[ƒY‚ÉˆÚs‚µ‚â‚·‚¢B
 
-## ˆê•”Gemƒ‰ƒCƒuƒ‰ƒŠ‚ª“®‚©‚È‚­‚È‚é‰Â”\«‚ª‚ ‚è
-ƒtƒƒ“ƒg—p‚ÌƒŠƒ|ƒWƒgƒŠ‚Å`docker run`‚µ‚½‚Æ‚±‚ëAŽŸ‚ÌƒGƒ‰[‚ª”­¶B  
-```mini_racer_extension.so: undefined symbol: ```   
-ƒGƒ‰[‚ð’²¸‚µ‚½‚ªA—LŒø‚È‰ðŒˆ•û–@‚ª‚Ý‚Â‚¯‚ç‚ê‚È‚©‚Á‚½‚Ì‚ÅAalpine‚Ægem‚Ì‘Š«–â‘è‚Æ‚¢‚¤ÅI”»’f‚µ‚Ü‚µ‚½B  
-‘Î‰ž‚Æ‚µ‚ÄAalpine‚ð’f”O‚µ‚ÄrubyŒöŽ®‚ÌDocker image‚ð—˜—p‚µ‚Ü‚µ‚½B
-
 ## ƒvƒƒZƒX‹N“®ƒIƒvƒVƒ‡ƒ“‚É‚Â‚¢‚Ä
 ƒvƒƒZƒX‹N“®ƒRƒ}ƒ“ƒh‚ðDockerfile‚Å‹LÚ‚µ‚Ü‚·‚ªAƒoƒbƒNƒOƒ‰ƒEƒ“ƒhŽÀsƒIƒvƒVƒ‡ƒ“‚ÍŠO‚µ‚Ü‚µ‚å‚¤B  
 Dockerfile‘¤‚ÅƒoƒbƒNƒOƒ‰ƒEƒ“ƒhƒIƒvƒVƒ‡ƒ“‚ð‚Â‚¯‚é‚ÆA‚Ìcontainer‚»‚Ì‚à‚Ì‚ª’âŽ~‚µ‚Ä‚µ‚Ü‚¢‚Ü‚·B  
 ƒoƒbƒNƒOƒ‰ƒEƒ“ƒh‹N“®‚µ‚½‚¢ê‡‚ÍA`docker run`Žž‚É`-d`ƒIƒvƒVƒ‡ƒ“‚ð‚Â‚¯‚Ä‘Î‰ž‚µ‚Ü‚µ‚å‚¤B  
 
+## alpine
+Œy—Ê‚ÈƒRƒ“ƒeƒi‚Æ‚µ‚Ä—L–¼‚Å‚·‚ªA’ˆÓ“_‚à‚ ‚è‚Ü‚µ‚½B
+### ƒƒOƒCƒ“ƒVƒFƒ‹ bash‚Å‚Í‚È‚­ashB
+```
+# ƒƒOƒCƒ“ƒVƒFƒ‹Žw’è‚Ü‚¿‚ª‚¦‚ÅƒGƒ‰[‚Æ‚È‚é
+docker run --rm -it test-image bash
+# ˆÈ‰º‚È‚çOK
+docker run --rm -it test-image ash
+docker run --rm -it test-image sh
+
+```
+### ˆê•”Gemƒ‰ƒCƒuƒ‰ƒŠ‚ª“®‚©‚È‚­‚È‚é‰Â”\«‚ª‚ ‚è
+ƒtƒƒ“ƒg—p‚ÌƒŠƒ|ƒWƒgƒŠ‚Å`docker run`‚µ‚½‚Æ‚±‚ëAŽŸ‚ÌƒGƒ‰[‚ª”­¶B  
+```mini_racer_extension.so: undefined symbol: ```   
+ƒGƒ‰[‚ð’²¸‚µ‚½‚ªA—LŒø‚È‰ðŒˆ•û–@‚ª‚Ý‚Â‚¯‚ç‚ê‚È‚©‚Á‚½‚Ì‚ÅAalpine‚Ægem‚Ì‘Š«–â‘è‚Æ‚¢‚¤ÅI”»’f‚µ‚Ü‚µ‚½B  
+‘Î‰ž‚Æ‚µ‚ÄAalpine‚ð’f”O‚µ‚ÄrubyŒöŽ®‚ÌDocker image‚ð—˜—p‚µ‚Ü‚µ‚½B
+
+
 ---
 
 # Ruby•Ò
-
 ## puma—˜—pŽž
 ¡‰ñ‚Ì\¬‚Å‚ÍAŽŸ‚Ì‚æ‚¤‚ÈwebƒT[ƒo‚ª‹@”\‚ª•s—v‚É‚È‚è‚Ü‚µ‚½B  
 Enginx‚ÌƒvƒƒZƒX   
@@ -166,55 +167,58 @@ Dockerfile‘¤‚ÅƒoƒbƒNƒOƒ‰ƒEƒ“ƒhƒIƒvƒVƒ‡ƒ“‚ð‚Â‚¯‚é‚ÆA‚Ìcontainer‚»‚Ì‚à‚Ì‚ª’âŽ~‚µ‚
 
 ## ƒo[ƒWƒ‡ƒ“ƒAƒbƒv‚É”º‚¤‰e‹¿
 XV‚³‚ê‚½Û‚ÉA`config/database.yml` ‚ª•K—v‚Æ‚È‚Á‚Ä‚¢‚Ü‚µ‚½B  
-Žg‚í‚ê‚È‚¢‚Í‚¸‚ÌÝ’èƒtƒ@ƒCƒ‹‚Å‚·‚ªAŽæ‚è‹}‚¬“®ì‚Ì‚½‚ß’Ç‰Á‚µ‚Ü‚µ‚½B
+Žg‚í‚ê‚È‚¢‚Í‚¸‚ÌÝ’èƒtƒ@ƒCƒ‹‚Å‚·‚ªAŽæ‚è‹}‚¬“®ì‚Ì‚½‚ß’Ç‰Á‚µ‚Ü‚µ‚½B  
 ‚È‚º•K—v‚É‚È‚Á‚½‚Ì‚©‚Æ‚¢‚¤‹^–â‚É‚Â‚¢‚Ä‚ÍAŽ–€‚Æ‚µ‚ÄŒã“ú’²¸‚Æ‚¢‚¤Œ`‚É‚µ‚Ü‚µ‚½B  
 
 ---
 
 # CI/CD•Ò
-## yamlƒtƒ@ƒCƒ‹
-ƒCƒ“ƒfƒ“ƒg‚ÉŒµ–§‚Å‚·B“®‚­ƒTƒ“ƒvƒ‹Œ©‚È‚ª‚çŽŽsöŒë‚µ‚Ä‚Ü‚µ‚½B  
-
-## ‘Î˜bƒ‚[ƒh‚¾‚Æ‚Æ‚Ü‚é
+## AWS Code3ŒZ’í
+### yamlƒtƒ@ƒCƒ‹
+‰üsAƒCƒ“ƒfƒ“ƒg‚ªŒµ–§‚É”»’è‚³‚ê‚Ü‚·B“®‚­ƒTƒ“ƒvƒ‹Œ©‚È‚ª‚çŽŽsöŒë‚µ‚Ä‚Ü‚µ‚½B  
+### ‘Î˜bƒ‚[ƒh
 CI/CD‚Ì«Ž¿ãA‘Î˜bƒ‚[ƒh‚Å‚Ì“®ì‚ð‘z’è‚µ‚Ä‚¢‚Ü‚¹‚ñB  
 ‘Î˜b‚ð‹‚ß‚ç‚ê‚È‚¢‚æ‚¤‚É‚µ‚Ü‚µ‚å‚¤
-—á
-```
+‘Î˜bƒ‚[ƒh‚É‚È‚éƒRƒ}ƒ“ƒh—á
 rmƒRƒ}ƒ“ƒh
 ƒpƒbƒP[ƒWŠÇ—ŒnƒRƒ}ƒ“ƒh(yum,apt-get,apk)
-```
+
+### ƒŠƒ|ƒWƒgƒŠŠÇ—
+\¬ãAgit‚ÌƒŠƒ|ƒWƒgƒŠ‚ª2‚Â‚É‚È‚é‚±‚Æ‚ª‚ ‚è‚Ü‚· 
+³‹K‚ÌCI/CDƒtƒ[‚ð–³Ž‹‚µ‚Ä‚ÌA’¼ÚgitƒŠƒ|ƒWƒgƒŠ‚ÌXV‘€ì‚Í‚â‚ß‚Ü‚µ‚å‚¤B  
+ƒ\[ƒX•sˆê’v‚É‚æ‚éÕ“Ë‚ÌŒ´ˆö‚É‚È‚èA•œ‹Œ‚ÉŽžŠÔ‚ª‚©‚©‚è‚Ü‚·B  
+
+### DB‚ÌXV
+DBXV‹@”\(rails‚Å‚Ídb:migrate)‚ÍAŽÀs‚·‚éêŠ‚ÍAWS“à•”‚©‚çŽÀs‚µ‚Ü‚µ‚å‚¤B  
+AWSŠO‚©‚çdb:migrate‚ðŽÀs‚·‚é‚É‚ÍAƒCƒ“ƒ^[ƒlƒbƒg‚©‚çRDS‚Ö‚ÌÚ‘±‹–‰ÂÝ’è‚ª•K—v‚É‚È‚èAƒZƒLƒ…ƒŠƒeƒBƒŠƒXƒN‚ª‚‚Ü‚è‚Ü‚·B
 
 
-
-	codecommit
-	circleci	ƒŠƒ|ƒWƒgƒŠ‚ª‚Q‚Â‚ ‚é‚Æ‚¢‚¤‚±‚Æ‚ÍAŒÂ•Ê‚ÉƒRƒ~ƒbƒg‚·‚é‚ÆA•sˆê’v‚ª‹N‚±‚éB
-
-
+## [The Twelve-fatrot App](https://12factor.net/ja/) 
+`ŠJ”­/–{”Ôˆê’v`‚É]‚¢A“¯ˆêƒRƒ“ƒeƒi‚ðŽg‚¢‚Ü‚µ‚å‚¤B  
+ŠÂ‹«‚²‚Æ‚É•Ï‚¦‚é•K—v‚ª‚ ‚é‚à‚Ì‚ÍAŠÂ‹«•Ï”‚ÅØ‚è‘Ö‚¦‚Ü‚µ‚å‚¤B
 
 
+### RAILS_ENV‚Ægit branch‚Ì‘g‚Ý‡‚í‚¹B
+![](images/rails-git-table.PNG)
 
-CICD AWS ‚Ç‚±‚Ådb:migrateŽÀs‚·‚é‚©l—¶‚ª•K—vB
-AWSŠO‚ÌCICDƒc[ƒ‹‚©‚çdb:migrate‚ðŽÀs‚µ‚æ‚¤‚Æ‚·‚é‚ÆA
-ƒCƒ“ƒ^[ƒlƒbƒg‚©‚çƒAƒNƒZƒX‚Å‚«‚é‚æ‚¤ŒŠ‚ðŠJ‚¯‚é•K—v‚ª‚ ‚é"
-
-
-
-	
-	•¡‡–ð	rails Docker	12 factor‚Ægit flo‚ÆA‚Ì·•ª‚Ì‚©‚ñ‚ª‚¦Œ^
-	Œˆ‚ß‚Ä‚¨‚¢‚½‚Ù‚¤‚ª‚¢‚¢‚æI
-
-	‚½‚Æ‚¦‚Î—^‚¦‚é’l‚ª•Ï‚í‚Á‚Ä‚­‚é
+RAILS_ENV‚ÅƒfƒtƒHƒ‹ƒgÝ’è‚ÅŽw’è‰Â”\‚È’l‚ÍA`test`,`develop`,`prodcution`‚Ì‚R‚Â‚É‚È‚è‚Ü‚·B  
+git‚Ìƒtƒ[‚É‚¨‚¢‚Ä`staging`ƒuƒ‰ƒ“ƒ`‚ðì¬‚µ‚Ä‚¢‚éê‡‚ÍA‘Î‰ž‚·‚éRAILS_ENV‚Ì’l‚ª‘¶Ý‚µ‚È‚¢‚½‚ß¬—‚µ‚â‚·‚¢‚Å‚·B  
+`ŠJ”­/–{”Ôˆê’v`‚É]‚¢ASTG‚ÆŠÂ‹«‚Ì–{”ÔŠÂ‹«‚ðì¬‚ð‚µ‚Ü‚µ‚å‚¤B  
 
 
-\¬‚É‰e‹¿‚·‚é@SECRET_KEY_BASE
-12 factor‚Ægit flo‚ÆA‚Ì·•ª‚Ì‚©‚ñ‚ª‚¦Œ^
+---
+
+# ”½È“_
 
 
 # ‚Å‚«‚È‚©‚Á‚½‚±‚Æ
-’Ê’m
+CICD‚ÌŒ‹‰Ê‚ðslack‚Ö’Ê’m
 
+---
 
 # Ž¿‹^‰ž“š
+
+---
 
 # ‚¨‚í‚è
 ‚²´’®‚ ‚è‚ª‚Æ‚¤‚²‚³‚¢‚Ü‚µ‚½B
