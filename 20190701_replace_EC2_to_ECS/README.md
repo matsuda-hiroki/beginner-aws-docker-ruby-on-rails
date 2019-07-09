@@ -1,95 +1,95 @@
-# �R���e�i�Ǒf�l���AEC2����ECS�ɃV�X�e�����v���[�X�����b
+# コンテナど素人が、EC2からECSにシステムリプレースした話
 
 ---
 
-# �͂��߂�
-�Â��悫EC2�̃I���v���̍\������AECS�\���ɏ悹������Č���S�������̂ŁA�����ō��������Ƃ͂܂�|�C���g�Ȃǂ��܂Ƃ߂܂��B
+# はじめに
+古きよきEC2のオンプレの構成から、ECS構成に乗せかえる案件を担当したので、そこで困ったことはまりポイントなどをまとめます。
 
 ---
 
-## ���s�T�[�r�X�\��
+## 現行サービス構成
 
-|����|���e|
+|分類|内容|
 | --- | --- |
-|����|Ruby 2.4.0 |
-|�t���[�����[�N|Ruby on Rails 5|
-|�E�F�u�T�[�o |nginx|
-|�f�[�^�x�[�X |MariaDB|
-|���̑�|GitHubEnterprise|
+|言語|Ruby 2.4.0 |
+|フレームワーク|Ruby on Rails 5|
+|ウェブサーバ |nginx|
+|データベース |MariaDB|
+|その他|GitHubEnterprise|
 
 ---
 
-## �Ή���������
-### Ruby�̃��W���[�o�[�W�����A�b�v
-`2.4.0`����`2.6.2`�ɍX�V
-### �R���e�i�Z�p�̗̍p
-ECS + fargate�̍\���ō\�z
-### CI/CD�������Ή�  
-CircleCi�ACodePipeline�ACode3�Z��(CodeCommit,CodeBuild,CodeDeploy)�̓���
+## 対応したこと
+### Rubyのメジャーバージョンアップ
+`2.4.0`から`2.6.2`に更新
+### コンテナ技術の採用
+ECS + fargateの構成で構築
+### CI/CD自動化対応  
+CircleCi、CodePipeline、Code3兄弟(CodeCommit,CodeBuild,CodeDeploy)の導入
 
 ---
 
-## ���C���̕M�҂̃X�L��
-### �T�[�r�X�J��
-�I���v��/AWS�ł̐V�KEC�T�[�r�X�̍\�z�A�J���A�ێ�^�p�A�o������
+## 着任時の筆者のスキル
+### サービス開発
+オンプレ/AWSでの新規ECサービスの構築、開発、保守運用、経験あり
 ### AWS
-AWS��3����  
-AWS�F�� �N���E�h�v���N�e�B�V���i�[ ����  
+AWS暦3ヶ月  
+AWS認定 クラウドプラクティショナー 所持  
 ### ruby
-�f�l
-### �R���e�i/Docker
-�f�l
+素人
+### コンテナ/Docker
+素人
 ###  CI/CD
-�f�l  
-jenkins�ŃW���u��G�������Ƃ�������x
+素人  
+jenkinsでジョブを触ったことがある程度
 
 ---
 
-# �S��
-�J���̐i�ߕ��Ƃ�  
+# 全般
+開発の進め方とか  
 
 ---
 
-## �܂��̓T���v���𓮂�����悤��
-�n���Y�I�������Ȃǂ�ϋɓI�Ɋ��p���A�ŏ��ɓ��삷����̍���Ă���̏C���A�g���������߂��܂��B  
-AWS Well-Architected�̎v�z�����f����Ă���A��b�I�ȕ���(VPC�A�T�u�l�b�g�A�Z�L�����e�B�O���[�v)�Ȃǂ�S�ۂ��Ă���܂��B  
+## まずはサンプルを動かせるように
+ハンズオン資料などを積極的に活用し、最初に動作するもの作ってからの修正、拡張をお勧めします。  
+AWS Well-Architectedの思想が反映されており、基礎的な部分(VPC、サブネット、セキュリティグループ)などを担保してくれます。  
 
 ---
 
-## ����ł��������낤
-�\�z�o���̂���L���ҁA�܂���AWS�����SA�ɋ��͈˗����āA����ł�������\�z���܂��傤�B  
-�ςȂ͂܂��������ƁA����i�܂Ȃ��Ȃ�Ă��Ƃ����肦�܂��B  
-�Y�񂾏�ŗL���҂ɑ��k���Ă݂���A�u���͌����Ⴂ�ȏꏊ�𒲍����Ă����v�Ƃ������Ƃ��B   
-���ӓ_�Ƃ��āA�����l�̈ӌ�����x�ɂ܂Ƃ߂ĕ����ƁA�󂯎�鑤�̏������ǂ������A��������\��������܂��B
+## 質問できる環境を作ろう
+構築経験のある有識者、またはAWSさんのSAに協力依頼して、質問できる環境を構築しましょう。  
+変なはまり方をすると、一日進まないなんてこともありえます。  
+悩んだ上で有識者に相談してみたら、「実は見当違いな場所を調査していた」ということも。   
+注意点として、複数人の意見を一度にまとめて聞くと、受け取る側の処理が追いつかず、混乱する可能性があります。
 
 ---
 
-## �H���̌��ς���
-���m�Ȍ��ς��肪�Ђ悤�ȏꍇ�́A������Ȃ����Ƃ��o���邾�����Ȃ����܂��傤�B  
-������Ȃ����Ƃ������ƌ�������Ɏ��Ԃ�����܂��B  
-������Ȃ����̂̐������A���肷��H�����{�ł͂Ȃ���Z�����Ǝv���Ă��������B  
-�G���[�������������I�ɔ��������ꍇ�ɂ́A���_�I�ɂ����Ȃ�܂��B    
+## 工数の見積もり
+正確な見積もりがひつような場合は、分からないことを出来るだけ少なくしましょう。  
+分からないことが多いと原因特定に時間がかります。  
+分からないものの数だけ、特定する工数が倍ではなく乗算されると思ってください。  
+エラーが同時が多発的に発生した場合には、精神的にきつくなります。    
 
 ---
 
-# AWS��
+# AWS編
 ## IAM
-### AWS���[�g�A�J�E���g 
-�A�J�E���g�̕������j���������܂��傤�B  
-1�A�J�E���g�ŕ����̃V�X�e�����Ǘ����悤�Ƃ���ƁA�����ȂǂŔ��ɕ�����ɂ����Ȃ�܂��B  
-�؂蕪���闱�x�Ƃ��ẮA�����P�ʁA�V�X�e���P�ʁA���P�ʂȂǂɂȂ�Ǝv���܂��B  
+### AWSルートアカウント 
+アカウントの分割方針を検討しましょう。  
+1アカウントで複数のシステムを管理しようとすると、検索などで非常に分かりにくくなります。  
+切り分ける粒度としては、部署単位、システム単位、環境単位などになると思います。  
 
 ---
 
-### �F�؏��
-�`�[���p�̋��ʃA�J�E���g�����܂��傤�B  
-�l�̃��[�U���甭�s����ƁA���C������ސE�����Ƃ���ID���폜����ē����Ȃ��Ȃ邱�Ƃ�����܂��B
+### 認証情報
+チーム用の共通アカウントを作りましょう。  
+個人のユーザから発行すると、離任したり退職したときにIDが削除されて動かなくなることがあります。
 
 ---
 
-### �|���V�[�̍č쐬�����ɃG���[
-�e�X�g�p�ɍ쐬�����|���V�[�폜���č�蒼�������ACodeBuild�ŃG���[�����B  
-�ȉ��̋L�����Q�Ƃ��đΉ������B�|���V�[�폜���ɁA�ǉ��ŏ����Ȃ���΂����Ȃ������悤�ł��B
+### ポリシーの再作成時時にエラー
+テスト用に作成したポリシー削除して作り直したが、CodeBuildでエラー発生。  
+以下の記事を参照して対応した。ポリシー削除時に、追加で消さなければいけなかったようです。
 ```
 The policy is attached to 0 entities but it must be attached to a single role
 https://qiita.com/kyuaz/items/3da93bd05b1342212577
@@ -98,183 +98,183 @@ https://qiita.com/kyuaz/items/3da93bd05b1342212577
 ---
 
 ## VPC
-VPC���ŕ����T�u�l�b�g���\�z����̂ŁA�傫�߂ɂƂ�܂��傤�B  
-VPC��IP�͈͂�`/24`�Ŋm�ۂ����IP�s���ɂȂ邩�A���f���ꂷ���ĕ�����ɂ���IP�тɂȂ�܂��B
+VPC中で複数サブネットを構築するので、大きめにとりましょう。  
+VPCのIP範囲を`/24`で確保するとIP不足になるか、分断されすぎて分かりにくいIP帯になります。
 
 ---
 
-### �T�u�l�b�g
-�����Z�O�����g�ƊO���Z�O�����g�𕪊����܂��傤�B
+### サブネット
+内部セグメントと外部セグメントを分割しましょう。
 
 ---
 
-### ���[�e�B���O private subnet����O�ɐڑ��ł��Ȃ�
-EIP�Anatgw��igw�A���[�g�e�[�u���̐ݒ���m�F���܂��傤�B
+### ルーティング private subnetから外に接続できない
+EIP、natgwやigw、ルートテーブルの設定を確認しましょう。
 
 ---
 
-###  DNS�o�^�ASSL�ؖ������s
-route53��A���R�[�h�AC���R�[�h�̓o�^�A
-ACM�̏ؖ������s��AWS�̃T�|�[�g�Ƀz���C�g���X�g�ɈϔC�ݒ肪�K�v�ȏꍇ������܂��B
+###  DNS登録、SSL証明書発行
+route53のAレコード、Cレコードの登録、
+ACMの証明書発行はAWSのサポートにホワイトリストに委任設定が必要な場合があります。
 
 ---
 
 ## EC2
-����m�F�p��EC2���쐬���Ă����Ƃ悢�B���̐؂蕪���Ɏg���܂��B
+動作確認用のEC2を作成しておくとよい。問題の切り分けに使えます。
 
 ---
 
 ## ALB
-ALB��������Z�O�����g�ɓ]������Ƃ��̃|�[�g��80�ԃ|�[�g�ŒʐM���܂��傤�B
-�����Ŏ󂯂鑤��SSL�ؖ�����ݒ肷��K�v���Ȃ��Ȃ�܂��B
+ALBから内部セグメントに転送するときのポートは80番ポートで通信しましょう。
+内部で受ける側にSSL証明書を設定する必要がなくなります。
 
 ---
 
 ## RDB
-�f�t�H���g�l���ƁAtimezone��UTC�ƂȂ��Ă��邽�ߓ��{���ԂƂ͎���������܂��B
-�p�����[�^�O���[�v�̐V�K�쐬�A�p�����[�^�̍X�V�A���蓖�ĂƔ��l��RDB�ċN�����K�v�ɂȂ邽�߁A�����^�C�~���O�ŏC������Ƃ悢�ł��B
+デフォルト値だと、timezoneがUTCとなっているため日本時間とは時差があります。
+パラメータグループの新規作成、パラメータの更新、割り当てと半値いRDB再起動が必要になるため、早いタイミングで修正するとよいです。
 
 ---
 
 ## S3
-GUI����o�P�b�g���R�s�[�����Ă��AAWS�o�P�b�g�|���V�[�܂ł̓R�s�[����Ȃ��B
+GUIからバケットをコピーをしても、AWSバケットポリシーまではコピーされない。
 
 ---
 
 # ECS	
-## ���O�̏o�͐�ɂ���
-������R���e�i��ɏo�͂��Ă��郍�O�́A�R���e�i�폜���Ă��܂��Ə����܂��B  
-�v���ɂ���ẮA�o�͐��S3�ȂǂɕύX���܂��傤�B
+## ログの出力先について
+特性上コンテナ上に出力しているログは、コンテナ削除してしまうと消えます。  
+要件によっては、出力先をS3などに変更しましょう。
 
 ---
 
-## �f�o�b�O���ɂ���
-Fargate�͋N���R���e�i�ւ�SSH���O�C���Ȃǂ͂ł��Ȃ��ł��B  
-���[�J���J������p�ӂ��邩�A�J������p�ӂ���SSH�ڑ��ł���EC2��I�����܂��傤�B
+## デバッグしにくい
+Fargateは起動コンテナへのSSHログインなどはできないです。  
+ローカル開発環境を用意するか、開発環境を用意してSSH接続できるEC2を選択しましょう。
 
 ---
 
-# �R���e�i/Docker��
+# コンテナ/Docker編
 
-## ����Docker image�̎���
-`docker build`���ɕK�v�ȃ\�t�g�E�G�A�̃C���X�g�[�����A�Â�ubuntu�C���[�W���g���Ă���ƁAapt-get�ŃG���[���o�鎖�Ⴊ����܂����B  
-�����́A[�Â��o�[�W�����̏�񂪁B�~���[�T�C�g����̍폜���ꂽ����](https://gihyo.jp/admin/clip/01/linux_dt/201903/25)  
-�Ή��Ƃ��ẮAimage�̃o�[�W�������グ�邱�ƂőΉ����܂����B  
-���p���Ă���OS�̃T�|�[�g�����������ӎ����Ă����Ƃ悢�ł��B  
-�T�|�[�g�������؂�Ă�����̂́A�����ɂł�Dockerfile���g���Ȃ��Ȃ���̂Ƃ��đ��}�ɍX�V�������߂��܂��B  
+## 公式Docker imageの寿命
+`docker build`時に必要なソフトウエアのインストール時、古いubuntuイメージを使っていると、apt-getでエラーが出る事例がありました。  
+原因は、[古いバージョンの情報が。ミラーサイトからの削除されたため](https://gihyo.jp/admin/clip/01/linux_dt/201903/25)  
+対応としては、imageのバージョンを上げることで対応しました。  
+利用しているOSのサポート期限がいつか意識しておくとよいです。  
+サポート期限が切れているものは、明日にでもDockerfileが使えなくなるものとして早急に更新をお勧めします。  
 
 ---
 
 ## docker-compose
-���������́ADockerfile������ECS+fargate���\�z�ł���Ǝv���Ă��܂������A
-docker-compose������Ă����ƁA���̗��_������̂ō쐬�������߂��܂��B  
-�E�s������������ꍇ�̃f�o�b�O���̗p�ӁB
-�EECS�^�X�N��`�Ƌ߂����ƂȂ�A�{�Ԋ��쐬�ɃX���[�Y�Ɉڍs���₷���B
+当初自分は、DockerfileだけでECS+fargateを構築できると思っていましたが、
+docker-composeを作っておくと、次の利点があるので作成をお勧めします。  
+・不具合が発生した場合のデバッグ環境の用意。
+・ECSタスク定義と近い環境となり、本番環境作成にスムーズに移行しやすい。
 
 ---
 
-## �v���Z�X�N���I�v�V�����ɂ���
-�v���Z�X�N���R�}���h��Dockerfile�ŋL�ڂ��܂����A�o�b�N�O���E���h���s�I�v�V�����͊O���܂��傤�B  
-Dockerfile���Ńo�b�N�O���E���h�I�v�V����������ƁA��container���̂��̂���~���Ă��܂��܂��B  
-�o�b�N�O���E���h�N���������ꍇ�́A`docker run`����`-d`�I�v�V���������đΉ����܂��傤�B  
+## プロセス起動オプションについて
+プロセス起動コマンドをDockerfileで記載しますが、バックグラウンド実行オプションは外しましょう。  
+Dockerfile側でバックグラウンドオプションをつけると、のcontainerそのものが停止してしまいます。  
+バックグラウンド起動したい場合は、`docker run`時に`-d`オプションをつけて対応しましょう。  
 
 ---
 
 ## alpine
-�y�ʂȃR���e�i�Ƃ��ėL���ł����A���ӓ_������܂����B
+軽量なコンテナとして有名ですが、注意点もありました。
 
 ---
 
-### ���O�C���V�F��
-bash�ł͂Ȃ�ash�B
+### ログインシェル
+bashではなくash。
 ```
-# ���O�C���V�F���w��܂������ŃG���[�ƂȂ�
+# ログインシェル指定まちがえでエラーとなる
 docker run --rm -it test-image bash
-# �ȉ��Ȃ�OK
+# 以下ならOK
 docker run --rm -it test-image ash
 docker run --rm -it test-image sh
 ```
 
 ---
 
-### �ꕔGem���C�u�����������Ȃ��Ȃ�\��������
-�t�����g�p�̃��|�W�g����`docker run`�����Ƃ���A���̃G���[�������B  
+### 一部Gemライブラリが動かなくなる可能性があり
+フロント用のリポジトリで`docker run`したところ、次のエラーが発生。  
 ```mini_racer_extension.so: undefined symbol: ```   
-�G���[�𒲍��������A�L���ȉ������@���݂����Ȃ������̂ŁAalpine��gem�̑������Ƃ����ŏI���f���܂����B  
-�Ή��Ƃ��āAalpine��f�O����ruby������Docker image�𗘗p���܂����B
+エラーを調査したが、有効な解決方法がみつけられなかったので、alpineとgemの相性問題という最終判断しました。  
+対応として、alpineを断念してruby公式のDocker imageを利用しました。
 
 ---
 
-# Ruby��
-## puma���p��
-����̍\���ł́A���̂悤��web�T�[�o���@�\���s�v�ɂȂ�܂����B  
-�Enginx�̃v���Z�X   
-�Eruby���o�͂���nginx�\�P�b�g��`  
+# Ruby編
+## puma利用時
+今回の構成では、次のようなwebサーバが機能が不要になりました。  
+・nginxのプロセス   
+・rubyが出力するnginxソケット定義  
 
 ---
 
-## �o�[�W�����A�b�v�ɔ����e��
-�X�V���ꂽ�ۂɁA`config/database.yml` ���K�v�ƂȂ��Ă��܂����B  
-�g���Ȃ��͂��̐ݒ�t�@�C���ł����A���}������̂��ߒǉ����܂����B  
-�Ȃ��K�v�ɂȂ����̂��Ƃ����^��ɂ��ẮA�����Ƃ��Č�������Ƃ����`�ɂ��܂����B  
+## バージョンアップに伴う影響
+更新された際に、`config/database.yml` が必要となっていました。  
+使われないはずの設定ファイルですが、取り急ぎ動作のため追加しました。  
+なぜ必要になったのかという疑問については、事項として後日調査という形にしました。  
 
 ---
 
-# CI/CD��
+# CI/CD編
 
 ---
 
-## AWS Code3�Z��
-### yaml�t�@�C��
-���s�A�C���f���g�������ɔ��肳��܂��B�����T���v�����Ȃ��玎�s���낵�Ă܂����B  
+## AWS Code3兄弟
+### yamlファイル
+改行、インデントが厳密に判定されます。動くサンプル見ながら試行錯誤してました。  
 
 ---
 
-### �Θb���[�h
-CI/CD�̐�����A�Θb���[�h�ł̓����z�肵�Ă��܂���B  
-�Θb�����߂��Ȃ��悤�ɂ��܂��傤
-�Θb���[�h�ɂȂ�R�}���h��
-rm�R�}���h
-�p�b�P�[�W�Ǘ��n�R�}���h(yum,apt-get,apk)
+### 対話モード
+CI/CDの性質上、対話モードでの動作を想定していません。  
+対話を求められないようにしましょう
+対話モードになるコマンド例
+rmコマンド
+パッケージ管理系コマンド(yum,apt-get,apk)
 
 ---
 
-### ���|�W�g���Ǘ�
-�\����Agit�̃��|�W�g����2�ɂȂ邱�Ƃ�����܂� 
-���K��CI/CD�t���[�𖳎����ẮA����git���|�W�g���̍X�V����͂�߂܂��傤�B  
-�\�[�X�s��v�ɂ��Փ˂̌����ɂȂ�A�����Ɏ��Ԃ�������܂��B  
+### リポジトリ管理
+構成上、gitのリポジトリが2つになることがあります 
+正規のCI/CDフローを無視しての、直接gitリポジトリの更新操作はやめましょう。  
+ソース不一致による衝突の原因になり、復旧に時間がかかります。  
 
 ---
 
-### DB�̍X�V
-DB�X�V�@�\(rails�ł�db:migrate)�́A���s����ꏊ��AWS����������s���܂��傤�B  
-AWS�O����db:migrate�����s����ɂ́A�C���^�[�l�b�g����RDS�ւ̐ڑ����ݒ肪�K�v�ɂȂ�A�Z�L�����e�B���X�N�����܂�܂��B
+### DBの更新
+DB更新機能(railsではdb:migrate)は、実行する場所はAWS内部から実行しましょう。  
+AWS外からdb:migrateを実行するには、インターネットからRDSへの接続許可設定が必要になり、セキュリティリスクが高まります。
 
 ---
 
 ## [The Twelve-fatrot App](https://12factor.net/ja/) 
-`�J��/�{�Ԉ�v`�ɏ]���A����R���e�i���g���܂��傤�B  
-�����Ƃɕς���K�v��������̂́A���ϐ��Ő؂�ւ��܂��傤�B
+`開発/本番一致`に従い、同一コンテナを使いましょう。  
+環境ごとに変える必要があるものは、環境変数で切り替えましょう。
 
 ---
 
-### RAILS_ENV��git branch�̑g�ݍ��킹�B
+### RAILS_ENVとgit branchの組み合わせ。
 ![](images/rails-git-table.PNG)
-RAILS_ENV�Ńf�t�H���g�ݒ�Ŏw��\�Ȓl�́A`test`,`develop`,`prodcution`�̂R�ɂȂ�܂��B  
-git�̃t���[�ɂ�����`staging`�u�����`���쐬���Ă���ꍇ�́A�Ή�����RAILS_ENV�̒l�����݂��Ȃ����ߍ������₷���ł��B  
-`�J��/�{�Ԉ�v`�ɏ]���ASTG�Ɗ��̖{�Ԋ����쐬�����܂��傤�B  
+RAILS_ENVでデフォルト設定で指定可能な値は、`test`,`develop`,`prodcution`の３つになります。  
+gitのフローにおいて`staging`ブランチを作成している場合は、対応するRAILS_ENVの値が存在しないため混乱しやすいです。  
+`開発/本番一致`に従い、STGと環境の本番環境を作成をしましょう。  
 
 ---
 
-# ���ȓ_�E�ł��Ȃ���������
-CI/CD�̌��ʂ�slack�֒ʒm����
-���O�o�͂�S3�ɔz�u����B
+# 反省点・できなかったこと
+CI/CDの結果をslackへ通知する
+ログ出力をS3に配置する。
 
 ---
 
-# ���^����
+# 質疑応答
 
 ---
 
-# �����
-���������肪�Ƃ��������܂����B
+# おわり
+ご清聴ありがとうごさいました。
