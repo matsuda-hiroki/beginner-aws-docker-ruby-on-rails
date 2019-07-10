@@ -89,7 +89,7 @@ AWS認定 クラウドプラクティショナー 所持
 
 ### ポリシー再作成時エラー
 テスト用に作成したポリシー削除して作り直したが、CodeBuildでエラー発生。  
-[quitaの記事] (https://qiita.com/kyuaz/items/3da93bd05b1342212577)を参照して対応した。ポリシー削除時に、追加で消さなければいけなかったようです。
+[quitaの記事](https://qiita.com/kyuaz/items/3da93bd05b1342212577) を参照して対応した。ポリシー削除時に、追加で消さなければいけなかったようです。
 ``` The policy is attached to 0 entities but it must be attached to a single role ```
 
 ---
