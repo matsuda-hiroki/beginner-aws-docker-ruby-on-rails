@@ -289,6 +289,13 @@ gitのフローにおいて`staging`ブランチを作成している場合は�
 
 # 参考資料
 
+AWSでのWeb標準構成ハンズオン  
+SA千葉さんありがとうございました 
+
+
+入門 Docker
+https://y-ohgi.com/introduction-docker/
+
 
 ---
 
