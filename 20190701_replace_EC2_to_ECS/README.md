@@ -29,6 +29,16 @@ CircleCi、CodePipeline、Code3兄弟(CodeCommit,CodeBuild,CodeDeploy)の導入
 
 ---
 
+## 構築したCI/CD環境
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/y/y-ohgi/20181226/20181226024526.png)
+
+参考：AWSにおける本番環境を想定したCI/CD実践
+https://y-ohgi.hatenablog.com/entry/2018/12/26/024738
+
+---
+
+
 ## 着任時の筆者のスキル
 ### サービス開発
 オンプレ/AWSでの新規ECサービスの構築、開発、保守運用、経験あり
@@ -299,6 +309,9 @@ Solutions Architect 千葉さん
 
 - 入門 Docker  
 https://y-ohgi.com/introduction-docker/
+
+- AWSにおける本番環境を想定したCI/CD実践
+https://y-ohgi.hatenablog.com/entry/2018/12/26/024738
 
 ---
 
