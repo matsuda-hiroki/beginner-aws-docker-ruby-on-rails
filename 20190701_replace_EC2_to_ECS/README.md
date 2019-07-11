@@ -283,19 +283,18 @@ gitのフローにおいて`staging`ブランチを作成している場合は�
 
 ---
 
-# 質疑応答
+# 参考資料
+
+- AWSでのWeb標準構成ハンズオン  
+Amazon Web Service Japan  
+Solutions Architect 千葉さん
+
+- 入門 Docker  
+https://y-ohgi.com/introduction-docker/
 
 ---
 
-# 参考資料
-
-AWSでのWeb標準構成ハンズオン  
-SA千葉さんありがとうございました 
-
-
-入門 Docker
-https://y-ohgi.com/introduction-docker/
-
+# 質疑応答
 
 ---
 
