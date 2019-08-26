@@ -219,7 +219,7 @@ docker run --rm -it test-image sh
 
 ### Gemライブラリが動かなくなった
 フロント用のリポジトリで`docker run`したところ、次のエラーが発生。  
-```mini_racer_extension.so: undefined symbol: ```   
+`mini_racer_extension.so: undefined symbol: `  
 エラーを調査したが、有効な解決方法がみつけられませんでした。  
 alpineとgemの相性問題という最終判断し、alpineを断念してruby公式のDocker imageを利用しました。  
 
