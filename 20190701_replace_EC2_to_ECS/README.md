@@ -315,10 +315,10 @@ https://y-ohgi.hatenablog.com/entry/2018/12/26/024738
 
 ---
 
-# スペシャルサンクス
+# Special Thanks
 
-DMM.com CTO室 藤川康之 
-DMM.com CTO室 大木祐介
+DMM.com CTO室 藤川康之  
+DMM.com CTO室 大木祐介  
 
 ---
 
