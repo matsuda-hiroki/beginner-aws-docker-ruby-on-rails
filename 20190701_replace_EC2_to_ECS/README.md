@@ -305,13 +305,20 @@ gitのフローにおいて`staging`ブランチを作成している場合は�
 
 - AWSでのWeb標準構成ハンズオン  
 Amazon Web Service Japan  
-Solutions Architect 千葉さん
+Solutions Architect 千葉さん 
 
 - 入門 Docker  
-https://y-ohgi.com/introduction-docker/
+https://y-ohgi.com/introduction-docker/  
 
 - AWSにおける本番環境を想定したCI/CD実践  
-https://y-ohgi.hatenablog.com/entry/2018/12/26/024738
+https://y-ohgi.hatenablog.com/entry/2018/12/26/024738  
+
+---
+
+# スペシャルサンクス
+
+DMM.com CTO室 藤川康之 
+DMM.com CTO室 大木祐介
 
 ---
 
