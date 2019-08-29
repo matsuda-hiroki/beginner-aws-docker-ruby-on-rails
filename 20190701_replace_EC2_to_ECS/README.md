@@ -28,6 +28,7 @@ AWS認定 クラウドプラクティショナー 所持
 
 |分類|内容|
 | --- | --- |
+|AWSサービス |EC2,RDS|
 |言語|Ruby 2.4.0 |
 |フレームワーク|Ruby on Rails 5|
 |ウェブサーバ |nginx|
@@ -40,7 +41,7 @@ AWS認定 クラウドプラクティショナー 所持
 ### Rubyのメジャーバージョンアップ
 `2.4.0`から`2.6.2`に更新
 ### コンテナ技術の採用
-ECS + fargateの構成で構築
+EC2を ECS + fargateの構成にリプレース
 ### CI/CD自動化対応  
 CircleCi、CodePipeline、Code3兄弟(CodeCommit,CodeBuild,CodeDeploy)の導入
 
