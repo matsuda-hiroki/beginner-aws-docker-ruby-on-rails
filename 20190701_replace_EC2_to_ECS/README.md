@@ -6,6 +6,23 @@
 古きよきEC2のオンプレの構成から、ECS構成に乗せかえる案件を担当したので、そこで困ったことはまりポイントなどをまとめます。
 
 ---
+## 誰？
+
+2015年5月 合同会社 DMM.com に入社。(5年目突入)    
+主に、サーバサイドのエンジニアやってます。  
+
+---
+
+## 着任時の筆者のスキル
+### サービス開発
+オンプレ/AWSでの新規ECサービスの構築、開発、保守運用、経験あり
+### AWS
+AWS暦3ヶ月  
+AWS認定 クラウドプラクティショナー 所持  
+### Ruby, コンテナ/Docker, CI/CD
+素人
+
+---
 
 ## 現行サービス構成
 
@@ -35,18 +52,6 @@ CircleCi、CodePipeline、Code3兄弟(CodeCommit,CodeBuild,CodeDeploy)の導入
 
 参考：AWSにおける本番環境を想定したCI/CD実践  
 https://y-ohgi.hatenablog.com/entry/2018/12/26/024738
-
----
-
-
-## 着任時の筆者のスキル
-### サービス開発
-オンプレ/AWSでの新規ECサービスの構築、開発、保守運用、経験あり
-### AWS
-AWS暦3ヶ月  
-AWS認定 クラウドプラクティショナー 所持  
-### Ruby, コンテナ/Docker, CI/CD
-素人
 
 ---
 
@@ -317,8 +322,9 @@ https://y-ohgi.hatenablog.com/entry/2018/12/26/024738
 
 # Special Thanks
 
-DMM.com CTO室 藤川康之  
-DMM.com CTO室 大木祐介  
+合同会社 DMM.com CTO室  
+藤川康之  
+大木祐介  
 
 ---
 
