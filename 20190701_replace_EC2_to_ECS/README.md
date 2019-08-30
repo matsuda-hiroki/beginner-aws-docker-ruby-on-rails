@@ -325,7 +325,7 @@ https://y-ohgi.hatenablog.com/entry/2018/12/26/024738
 
 合同会社 DMM.com CTO室  
 藤川康之  
-大木祐介  
+大木裕介  
 
 ---
 
