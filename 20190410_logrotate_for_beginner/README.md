@@ -1,53 +1,134 @@
-# �z��ǎ�
-���O���[�e�[�g��m��Ȃ��l�B  
-���O���[�e�[�g�̊T�v��m���Ă��邪�A�ǂ̂悤�ɐݒ肷�邩�̏ڍׂ�m��Ȃ��l�B  
+## はじめてのログローテート
+2019年 9月 松田 弘樹
 
-# ���O���[�e�[�g�Ƃ͉���
-Log�F (�����E�Ɩ��Ȃǂ�)�L�^  
-Rotate�F��]����A�z����A���]����A��ւ���  
-���L�^���z������\�t�g�E�G�A�B
+---
 
-# ���O���[�e�[�g�̖ړI
-���O�����I�ɍ폜���邱�ƂŁA���O�̔�剻��h�����Ƃł��B   
-�T�[�o�ŉғ����Ă���e��\�t�g�E�G�A�́A���O���o�͂��Ă��܂��B  
-�ELinux�̃V�X�e�����O(syslog)  
-�E�~�h���E�G�A���O  (apache�̃A�N�Z�X���O�Amysql�̃��O)  
+## Who are you ?
+~俺だよ俺~  
+2015年5月 合同会社 DMM.com に入社。(5年目突入)    
+主に、サーバサイドのエンジニアやってます。  
+社内のカメラ部部長やる予定です。きてね。  
 
-### ���O���[�e�V��������Ȃ��Ƃǂ��Ȃ�H  
-�T�[�o�̃f�B�X�N�̈���g������A���O���������߂Ȃ����ƂŃT�[�o���@�\��~���鋰�ꂪ����܂��B 
+---
 
-# ���O���[�e�[�g����ɂ�
-## ���O���[�e�[�g�\�t�g�E�G�A�ulogrotate�v ���g�����I  
-�ŋ߂�Linux�ł̓f�t�H���g�œ�������Ă�����Ƀ��W���[�ȃ\�t�g�E�G�A�B  
-�����A�Ȃ��ꍇ��yum��apt�Ȃǂ̃c�[���œ������܂��傤�B  
+## 想定する視聴者
+ログローテートを知らない人。  
+ログローテートの概要を知っているが、どのように設定するかの詳細を知らない人。  
 
-# �ݒ肵�Ă݂悤
-`/etc/logrotate.d/ ` �z���ɁA�\�t�g�E�G�A��@�\�P�ʂŐݒ�t�@�C����z�u����`�������W���[�ł��B  
+---
 
-## �t�@�C������
+## ログローテートとは何か
+Log： (実験・業務などの)記録  
+Rotate：回転する、循環する、自転する、交替する  
+→記録を循環させるソフトウエア。
+
+---
+
+## ログローテートの目的
+ログを定期的に削除することで、ログの肥大化を防ぐことです。   
+サーバで稼動している各種ソフトウエアは、ログを出力しています。  
+* Linuxのシステムログ(syslog)  
+* ミドルウエアログ  (apacheのアクセスログ、mysqlのログ)  
+
+---
+
+## みんなは、ログローテートてきてるかな？
+
+---
+
+### ログローテションされないとどうなる？  
+サーバのディスク領域を使いきり、ログが書き込めないことでサーバが機能停止する恐れがあります。 
+
+---
+
+## さてここで問題です
+次の条件のログサイズはいくつでしょう。
+
+### 条件
+集計期間は6ヶ月  
+基本設定はデフォルト  
+ログローテションの設定なし  
+AWSのEC2上で構築  
+ALBがあるのでヘルスチェックを実施  
+社内システムのため膨大なアクセスはない  
+
+---
+
+## 回答
+
+約280MB。月間45MB増えていきます。  
+5年も放置されると、20GB使い切ってしまいます。
+
+```
+# 手動でローテーションしたやつ
+-rw-rw-r--  1 ec2-user ec2-user 287399970 Jun 25 19:36 production.log.20190625
+```
+
+---
+
+## ログローテートするには?
+アプリケーション側でのローテーション設定と、OS側のローテション設定があります。  
+ここでは、後者を解説していきます。  
+
+---
+
+## ログローテートソフトウエア「logrotate」 を使おう！  
+最近のLinuxではデフォルトで導入されている非常にメジャーなソフトウエア。  
+もし、ない場合はyumやaptなどのツールで導入しましょう。  
+
+---
+
+## 設定してみよう
+
+`/etc/logrotate.d/ ` 配下に、ソフトウエアや機能単位で設定ファイルを配置しましょう。  
+MW全部のログを１つにまとめるのはやめましょう。お兄さんとの約束だよ。  
+ElasticSearchなどでログ解析しようとしたとき、構文解析にが必要なり、余計な手間だよ
+
+## ファイル名例
 ```
 /etc/logrotate.d/apache
 /etc/logrotate.d/nginx
 /etc/logrotate.d/php-web
 /etc/logrotate.d/php-api
 ```
-## �ݒ�ł��鍀��
 
-| ���ږ� | ���e�ڍ� |
+## apacheの記載例
+```
+cat /etc/logrotate.d/httpd
+/var/log/httpd/*log {
+    missingok
+    notifempty
+    sharedscripts
+    delaycompress
+    postrotate
+        /sbin/service httpd reload > /dev/null 2>/dev/null || true
+    endscript
+}
+```
+## 設定できる項目
+| 項目名 | 内容詳細 |
 |:------|:--------|
-| daily|�������s����|
-|rotate [��]|���[�e�[�V��������񐔂��w��|
-|size [�t�@�C���T�C�Y]|���O�t�@�C�����w�肵���t�@�C���T�C�Y�ȏ�ɂȂ����烍�[�e�[�V��������|
-|postrotate�`endscript|�L�q���ꂽ�R�}���h�����O���[�e�[�V������Ɏ��s|
-|compress|���[�e�[�V�����������O��gzip�ň��k|
+|missingok |指定のログファイルがなくても処理続行 |
+|notifempty | ログファイルが空ならスキップ |
+|delaycompress| ローテーション1世代目は圧縮しない| 
+|daily|毎日実行する|
+|rotate [回数]|ローテーションする回数を指定|
+|size [ファイルサイズ]|ログファイルが指定したファイルサイズ以上になったらローテーションする|
+|postrotate～endscript|記述されたコマンドをログローテーション後に実行|
+|compress|ローテーションしたログをgzipで圧縮|
 
-# ���ӓ_
-logrotate�́Aroot�����Ŏ��s���܂��B  
-���̂��߁Apostrotate���Ńt�@�C���폜�R�}���h��script�����s����ꍇ�ɂ͕K�����؊��œ���m�F���Ă��������B  
-�s�K�؂ȃX�N���v�g�����s���ꂽ�ꍇ�A�ň��V�X�e���t�@�C�����j�����A�T�[�o���_�E�����܂�  
+---
 
-# ���^����
+## 注意点
+logrotateは、root権限で実行します。  
+そのため、postrotate等でファイル削除コマンドやscriptを実行する場合には必ず検証環境で動作確認してください。  
+不適切なスクリプトが実行された場合、最悪システムファイルが破損し、サーバがダウンします  
 
+---
 
-# �����
-�������L��������܂����B
+## 質疑応答
+
+---
+
+## おわり
+ご清聴有難うございました。
