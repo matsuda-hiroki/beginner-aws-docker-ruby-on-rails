@@ -150,7 +150,7 @@ Elasticsearchなどでログ解析しようとしたとき、構文解析やデ�
 
 ## apacheの記載例
 ```
-cat /etc/logrotate.d/httpd
+# /etc/logrotate.d/httpd
 /var/log/httpd/*log {
     missingok
     notifempty
